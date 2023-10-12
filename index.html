@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Aplikace pro odchod z práce</title>
+</head>
+<body>
+    <h1>Kalkulačka pro líný lidi</h1>
+
+    <label for="casPrijezd">Čas příjezdu (hh:mm):</label>
+    <input type="text" id="casPrijezd"><br>
+
+    <label for="delkaPrace">Délka práce (v minutách):</label>
+    <input type="number" id="delkaPrace"><br>
+
+    <label for="delkaPrestavky">Délka přestávky (v minutách):</label>
+    <input type="number" id="delkaPrestavky"><br>
+
+    <button onclick="spocitejOdchod()">Spočítat odchod</button>
+
+    <p>Plánovaný odchod z práce bude v: <span id="casOdchod"></span></p>
+
+    <script>
+        function spocitejOdchod() {
+            const casPrijezd = document.getElementById('casPrijezd').value;
+            const delkaPrace = parseInt(document.getElementById('delkaPrace').value);
+            const delkaPrestavky = parseInt(document.getElementById('delkaPrestavky').value);
+
+            const [prijezdHodiny, prijezdMinuty] = casPrijezd.split(':');
+
+            const prijezdCas = new Date();
+            prijezdCas.setHours(parseInt(prijezdHodiny), parseInt(prijezdMinuty));
+
+            // Přičítání délky práce a délky přestávky
+            prijezdCas.setMinutes(prijezdCas.getMinutes() + delkaPrace + delkaPrestavky);
+
+            const odchodHodiny = prijezdCas.getHours();
+            const odchodMinuty = prijezdCas.getMinutes();
+
+            const casOdchod = `${odchodHodiny.toString().padStart(2, '0')}:${odchodMinuty.toString().padStart(2, '0')}`;
+
+            document.getElementById('casOdchod').textContent = casOdchod;
+        }
+    </script>
+</body>
+</html>
