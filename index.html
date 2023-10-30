@@ -3,44 +3,44 @@
 <head>
     <meta charset="utf-8">
     <title>Aplikace pro odchod z práce</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
-    <h1>Kalkulačka pro líný lidi</h1>
+<div class="container">
+    <h1 class="text-center">Kalkulačka pro líný lidi</h1>
 
-    <label for="casPrijezd">Čas příjezdu (hh:mm):</label>
-    <input type="text" id="casPrijezd"><br>
+    <form onsubmit="spocitejOdchod(); return false;">
+        <div class="form-group">
+            <label for="casPrijezd">Čas příchodu (hh:mm):</label>
+            <input type="text" class="form-control" id="casPrijezd">
+        </div>
 
-    <label for="delkaPrace">Délka práce (v minutách):</label>
-    <input type="number" id="delkaPrace"><br>
+        <div class="form-group">
+            <label for="delkaPrace">Délka práce (hh):</label>
+            <input type="number" class="form-control" id="delkaPrace">
+        </div>
 
-    <label for="delkaPrestavky">Délka přestávky (v minutách):</label>
-    <input type="number" id="delkaPrestavky"><br>
+        <div class="form-group">
+            <label for="delkaPrestavky">Délka přestávky (mm):</label>
+            <input type="number" class="form-control" id="delkaPrestavky">
+        </div>
 
-    <button onclick="spocitejOdchod()">Spočítat odchod</button>
+        <button class="btn btn-primary" onclick="spocitejOdchod()">Spočítat odchod</button>
 
-    <p>Plánovaný odchod z práce bude v: <span id="casOdchod"></span></p>
+        <p>Plánovaný odchod z práce bude v: <span id="casOdchod"></span></p>
+    </form>
 
-    <script>
-        function spocitejOdchod() {
-            const casPrijezd = document.getElementById('casPrijezd').value;
-            const delkaPrace = parseInt(document.getElementById('delkaPrace').value);
-            const delkaPrestavky = parseInt(document.getElementById('delkaPrestavky').value);
+    <hr>
+    <p class="text-muted">TIP: Do pole "Délka práce" piš jen celá čísla (1, 2, 3, ...)</p>
+</div>
 
-            const [prijezdHodiny, prijezdMinuty] = casPrijezd.split(':');
 
-            const prijezdCas = new Date();
-            prijezdCas.setHours(parseInt(prijezdHodiny), parseInt(prijezdMinuty));
-
-            // Přičítání délky práce a délky přestávky
-            prijezdCas.setMinutes(prijezdCas.getMinutes() + delkaPrace + delkaPrestavky);
-
-            const odchodHodiny = prijezdCas.getHours();
-            const odchodMinuty = prijezdCas.getMinutes();
-
-            const casOdchod = `${odchodHodiny.toString().padStart(2, '0')}:${odchodMinuty.toString().padStart(2, '0')}`;
-
-            document.getElementById('casOdchod').textContent = casOdchod;
-        }
-    </script>
+<script src="assets/js/load.js"> </script>
+<!-- Add Bootstrap JS (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
