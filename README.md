@@ -1,8 +1,6 @@
 # Aplikace pro odchod z práce
 
-![Screenshot](screenshot.png)
-
-This is a simple web application that calculates your planned departure time from work. It's designed for lazy people who don't want to do the math themselves.
+*This is a simple web application that calculates your planned departure time from work. It's designed for lazy people who don't want to do the math themselves.*
 
 ## Features
 
@@ -26,6 +24,3 @@ This is a simple web application that calculates your planned departure time fro
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-
-[MIT License](LICENSE)
