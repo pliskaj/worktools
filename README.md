@@ -64,7 +64,7 @@ You can run these apps by opening the respective HTML files in your web browser.
 - HTML
 - JavaScript
 - [Bootstrap](https://getbootstrap.com/) - Used for styling (CSS).
-- [jQuery](https://jquery.com/) - Used for optional JavaScript functionality.
+
 
 ## Version
 
@@ -72,7 +72,7 @@ Version 1.0.3
 
 ## Authors
 
-- [Your Name]
+- pliskaj
 
 ## License
 
