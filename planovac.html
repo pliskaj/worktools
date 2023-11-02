@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pracovní nástroje |Správce příjmů a výdajů</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pracovní nástroje </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="kalkul.html">Výpočet plánovaného odchodu </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="planovac.html">Plánovač příjmů a výdajů <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Domů</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+           Verze 1.0.3
+          </span>
+        </div>
+      </nav>
+    <div class="container mt-4">
+        <h1 class="mb-4">Správce příjmů a výdajů</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Částka: Kč</label>
+                    <input type="text" class="form-control" id="amount" placeholder="Zadejte částku">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Popis:</label>
+                    <input type="text" class="form-control" id="description" placeholder="Zadejte popis">
+                </div>
+                <button id="addIncome" class="btn btn-primary">Přidat příjem</button>
+                <button id="addExpense" class="btn btn-danger">Přidat výdaj</button>
+                <button id="resetSession" class="btn btn-secondary mt-3">Obnovit session</button>
+            </div>
+            <div class="col-md-8">
+                <h2 class="mb-3">Transakce</h2>
+                <ul id="transactions" class="list-group">
+                </ul>
+                <h3>Zůstatek: <span id="balance" class="text-primary">0,00 Kč</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/loadPlanovac.js"></script>
+
+<!-- Add Bootstrap JS (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
